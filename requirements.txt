@@ -1,0 +1,9 @@
+Flask>=1.1.2
+Flask-WTF>=0.14.3
+Flask-Session
+spotipy
+google-cloud-firestore
+python-dotenv
+requests
+gunicorn
+openai

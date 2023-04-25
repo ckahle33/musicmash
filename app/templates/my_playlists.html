@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Playlists{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}  
+    <h3>My Playlists</h3>
+    <table class="w-100">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Track Count</th>
+            <th>Collaborative</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in results['items'] %}
+            <tr>
+              <td>
+                {% if i['images']  %} 
+                  <img src="{{ i['images'][0]['url'] }}" alt="" srcset="" style="max-width: 64px;"></td>
+                {% else %}
+                  <img src="https://source.unsplash.com/random/?music,guitar,keyboard" alt="" srcset="" style="max-width: 64px;"></td>
+                {% endif %}
+              </td>            
+              <td><h6><a href="{{ i['external_urls']['spotify']}}" target="_blank">{{ i['name'] }}</a></h6></td>
+              <td><p>{{ i['description'] }}</p></td>
+              <td>{{ i['tracks']['total'] }}</td>                                         
+              <td>{{ i['collaborative']}} </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+    <canvas id="myChart" width="400" height="400"></canvas>        
+{% endblock %}

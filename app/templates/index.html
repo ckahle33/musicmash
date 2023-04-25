@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}  
+    {% if user %}
+      Logged in as {{user}}
+    {% endif %}    
+    <img src="static/splash.png" style="width: 80px;" alt="" srcset="">
+    
+    <h1>Track your Spotify trends and generate playlists</h1>
+    <p class="lead">Explore recent playlists, favorite tracks, and build playlists from friends</p>
+      
+{% endblock %}

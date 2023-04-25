@@ -1,0 +1,20 @@
+body {
+  font-size: 16px;
+  /* background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed; */
+  /* background-opacity: .2; */
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* background-size: cover; */
+  /* -o-background-size: cover; */
+}
+
+h1 {
+  font-family: arial;
+  font-size: 40px;
+}
+
+.avatar {
+    max-width: 40px;
+    border-radius: 50%;
+}
+/*# sourceMappingURL=app.css.map */

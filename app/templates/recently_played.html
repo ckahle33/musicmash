@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Playlists{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}  
+    <h3>My Recently Played Tracks</h3>
+  {# {{ results['items'][0]['track'] }} #}
+    <button class="btn btn-primary" href="/create-playlist?track="></button>
+    <table class="w-100">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Track</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in results['items'] %}
+            <tr>
+              <td><img src="{{ i['track']['album']['images'][2]['url'] }}" alt="" srcset="" style="max-width: 64px;"></td>
+              <td><a href="{{ i['track']['href']}}" target="_blank">{{ i['track']['name'] }}</a></td>
+              <td><a href="{{ i['track']['artists'][0]['external_urls']['spotify']}}" target="_blank">{{ i['track']['artists'][0]['name'] }}</a></td>
+              <td><a href="{{ i['track']['album']['external_urls']['spotify']}}" target="_blank">{{ i['track']['album']['name'] }}</a></td>              
+              <td><a class="btn btn-primary" style="font-size: 14px;" href="#" target="_blank">Create Playlist from GPT</a></td>              
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+{% endblock %}
